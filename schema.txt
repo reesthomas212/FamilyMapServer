@@ -1,0 +1,34 @@
+CREATE TABLE IF NOT EXISTS userTable (
+    username varchar(255) NOT NULL PRIMARY KEY,
+    password varchar(255) NOT NULL,
+    emailAddress varchar(255) NOT NULL,
+    firstName varchar(255) NOT NULL,
+    lastName varchar(255) NOT NULL,
+    gender varchar(255) NOT NULL,
+    personID varchar(255) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS personTable (
+    personID varchar(255) NOT NULL PRIMARY KEY,
+    descendant varchar(255) NOT NULL,
+    firstName varchar(255) NOT NULL,
+    lastName varchar(255) NOT NULL,
+    gender varchar(255) NOT NULL,
+    father varchar(255),
+    mother varchar(255),
+    spouse varchar(255)
+);
+CREATE TABLE IF NOT EXISTS eventTable (
+    eventID varchar(255)  NOT NULL PRIMARY KEY,
+    descendant varchar(255)  NOT NULL,
+    person varchar(255)  NOT NULL,
+    latitude varchar(255)  NOT NULL,
+    longitude varchar(255)  NOT NULL,
+    country varchar(255)  NOT NULL,
+    city varchar(255)  NOT NULL,
+    eventType varchar(255)  NOT NULL,
+    year varchar(255)  NOT NULL
+);
+CREATE TABLE IF NOT EXISTS authTokenTable (
+    userName varchar(255)  NOT NULL,
+    authToken varchar(255)  NOT NULL PRIMARY KEY
+);
